@@ -1,6 +1,6 @@
 import { BUY_CAKE } from "./cakeTypes.js";
 
-export function buyCake() {
+export function buyCakeAction() {
   return {
     type: BUY_CAKE,
   };
