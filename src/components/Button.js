@@ -1,3 +1,7 @@
-export function Button({ name, onClick }) {
-  return <button onClick={onClick}>{name}</button>;
+export function Button({ name, onClick, disabled }) {
+  return (
+    <button disabled={disabled} onClick={onClick}>
+      {name}
+    </button>
+  );
 }
