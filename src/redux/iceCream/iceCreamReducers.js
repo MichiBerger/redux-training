@@ -9,7 +9,7 @@ export function iceCreamReducer(state = initialIceCreamState, action) {
     case BUY_ICECREAM:
       return {
         ...state,
-        numberOfIceCreams: state.numberOfIceCreams - 1,
+        numberOfIceCreams: state.numberOfIceCreams - action.payload,
       };
     default:
       return state;
