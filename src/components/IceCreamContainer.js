@@ -6,7 +6,7 @@ import { Button } from "./Button.js";
 import { Input } from "./Input.js";
 
 export function IceCreamContainer() {
-  const [inputValue, setInputValue] = useState("");
+  const [inputValue, setInputValue] = useState(1);
 
   const numberOfIceCreams = useSelector(
     (state) => state.iceCream.numberOfIceCreams
@@ -15,6 +15,7 @@ export function IceCreamContainer() {
 
   function handleBuyIceCream(value) {
     dispatch(buyIceCreamAction(value));
+    setInputValue(1);
   }
 
   function handleInputChange(event) {
@@ -36,12 +37,10 @@ export function IceCreamContainer() {
         />
         <Button
           disabled={numberOfIceCreams <= 0}
-          name="Eis kaufen"
+          name={`${inputValue} Eis kaufen`}
           onClick={() => handleBuyIceCream(inputValue)}
         />
       </div>
-
-      {inputValue !== "" ? <p>{inputValue}</p> : null}
     </div>
   );
 }
